@@ -18,8 +18,11 @@ module.exports = {
     },
     plugins: [
       new MF({
-        name: "vuecli_remote",
+        name: "micro_remote",
         filename: 'remoteEntry.js',
+        remotes: {
+          base_remote: 'base_remote@http://localhost:9004/$_mfplugin_remoteEntry.js'
+        }
       })
     ]
   },

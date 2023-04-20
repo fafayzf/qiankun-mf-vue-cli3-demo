@@ -11,21 +11,21 @@ export default {
   mounted() {
     // 2种方法任选其一
     // 1. 可以设置entry来加载子应用的app.js
-    loadMicroApp({
-      name: 'micro-app',
-      entry: {
-        scripts: ['//localhost:9006/app.js'],
-        html: "<div id=app></div>"
-      },
-      container: this.$refs['container'],
-    })
-
-    // 2. 子应用已经对html-webpack-plugin做过去除mf入口的处理, 可以解析子应用的html加载子应用
     // loadMicroApp({
     //   name: 'micro-app',
-    //   entry: "//localhost:9006",
+    //   entry: {
+    //     scripts: ['//localhost:9006/app.js'],
+    //     html: "<div id='app'></div>"
+    //   },
     //   container: this.$refs['container'],
     // })
+
+    // 2. 子应用已经对html-webpack-plugin做过去除mf入口的处理, 可以解析子应用的html加载子应用
+    loadMicroApp({
+      name: 'micro-app',
+      entry: "//localhost:9006",
+      container: this.$refs['container'],
+    })
   },
   methods: {
     handleClick() {

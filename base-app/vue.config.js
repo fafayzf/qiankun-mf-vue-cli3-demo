@@ -10,14 +10,14 @@ module.exports = {
   parallel: false,
   publicPath: "http://localhost:9004",
   chainWebpack(chain) {
-    chain.optimization.splitChunks().clear()
-    // chain.plugin('moduleFederation')
-    //   .use(MF, [{
-    //     name: "vuecliremote",
-    //     filename: 'remoteEntry.js',
-    //     exposes: {
-    //       "./util": "./src/utils/index.js"
-    //     }
-    //   }])
+    // chain.optimization.splitChunks().clear()
+    chain.plugin('moduleFederation')
+      .use(MF, [{
+        name: "base_remote",
+        filename: 'baseremoteEntry.js',
+        exposes: {
+          "./util": "./src/utils/index.js"
+        }
+      }])
   },
 }

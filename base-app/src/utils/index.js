@@ -1,3 +1,3 @@
 export function baseApp() {
-  console.log('baseApp----')
+  return '主应用内容'
 }

@@ -1,8 +1,22 @@
 <template>
   <div id="app">
-   子应用内容
+   子应用内容，接收的内容：{{baseApp}}
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      baseApp: ''
+    }
+  },
+  mounted() {
+    import('base_remote/util').then(res => {
+      this.baseApp = res.baseApp()
+    })
+  }
+}
+</script>
 
 <style>
 #app {
