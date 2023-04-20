@@ -19,9 +19,9 @@ module.exports = {
     plugins: [
       new MF({
         name: "micro_remote",
-        filename: 'remoteEntry.js',
+        filename: 'micro_remote_entry.js',
         remotes: {
-          base_remote: 'base_remote@http://localhost:9004/$_mfplugin_remoteEntry.js'
+          base_remote: 'base_remote@http://localhost:9004/base_remote_entry.js'
         }
       })
     ]

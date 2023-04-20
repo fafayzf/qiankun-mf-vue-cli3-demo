@@ -14,7 +14,7 @@ module.exports = {
     chain.plugin('moduleFederation')
       .use(MF, [{
         name: "base_remote",
-        filename: 'baseremoteEntry.js',
+        filename: 'base_remote_entry.js',
         exposes: {
           "./util": "./src/utils/index.js"
         }
